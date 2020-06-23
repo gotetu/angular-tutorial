@@ -26,10 +26,18 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('angular-tutorial');
   });
 
-  it('should render title', () => {
+  it('should create app-top-bar', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('router-defined')).toBeDefined();
-  });
+    expect(compiled.querySelector('app-top-bar')).toBeDefined();
+  }));
+
+  it('should create route-outlet', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('router-outlet')).toBeDefined();
+  }));
+
 });
